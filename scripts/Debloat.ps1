@@ -26,7 +26,7 @@ $BloatwareList = @(
 	{
 		if ((Get-AppxPackage -Name $Bloat).NonRemovable -eq $false)
 		{
-			$Log.Text = "Removing $Bloat"
+			$Log.Text = "Törlés $Bloat.."
 			Try
 			{
 				Get-AppxPackage -Name $Bloat | Remove-AppxPackage -ErrorAction Stop | Out-Null
@@ -34,7 +34,7 @@ $BloatwareList = @(
 			}
 			Catch
 			{
-				$Log.Text = "Failed to remove $Bloat, exception : $($_)"
+				$Log.Text = "Nem sikreült letörölni a $Bloat, mert : $($_)"
 			}
 			
 		}
